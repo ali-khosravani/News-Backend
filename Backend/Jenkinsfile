@@ -4,12 +4,12 @@ pipeline {
     stages{
         stage('Build') {
             steps {
-                echo 'Building...'
+                sh './mvnw clean install -DskipTest'
             }
         }
         stage('Test'){
             steps {
-                echo 'Testing...'
+                sh './mvnw test -Punit'
             }
         }
         stage('Deliver') {
@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying...'
+                sh 'mvn spring-boot:run'
             }
         }
     }
