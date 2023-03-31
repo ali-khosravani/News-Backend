@@ -43,12 +43,6 @@ public class TopNews {
         this.imgUrl = imgUrl;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof TopNews topNews)) return false;
-        return id == topNews.id;
-    }
 
     @Override
     public int hashCode() {
