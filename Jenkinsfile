@@ -21,10 +21,6 @@ pipeline {
                 echo 'Delivering...'
             }
         }
-        stage('Deploy') {
-            steps {
-            	sh 'cd Backend && mvn -B -DskipTest clean package'                
-            }
-        }
+       
     }
 }
