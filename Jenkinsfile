@@ -7,7 +7,8 @@ pipeline {
     stages{
         stage('Build') {
             steps {
-                sh 'cd Backend && mvn -B -DskipTest clean package'
+            	sh 'mvn -Dmaven.test.failure.ignore=true install'
+                
             }
         }
         stage('Test'){
@@ -22,7 +23,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'mvn -Dmaven.test.failure.ignore=true install'
+            	sh 'cd Backend && mvn -B -DskipTest clean package'                
             }
         }
     }
