@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-            	sh 'mvn -B -DskipTest clean package'                
+            	sh 'cd Backend && mvn -B -DskipTest clean package'                
             }
         }
     }
