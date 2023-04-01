@@ -21,6 +21,11 @@ pipeline {
                 echo 'Delivering...'
             }
         }
+        stage('Deploy') {
+            steps {
+                echo 'cd Backend && mvn spring-boot:run'
+            }
+        }
        
     }
 }
