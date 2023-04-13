@@ -15,10 +15,7 @@ public class TopNews {
     private String imgUrl;
 
     public TopNews(){}
-    public TopNews(String title , String imgUrl){
-        this.title=title;
-        this.imgUrl=imgUrl;
-    }
+
     public long getId() {
         return id;
     }
