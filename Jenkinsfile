@@ -13,7 +13,12 @@ pipeline {
         }
         stage('Test'){
             steps {
-                echo 'test is running'
+                sh 'mvn -f Backend/pom.xml test'
+            }
+            post {
+                always {
+                    junit 'Backend/target/surefire-reports/*.xml'
+                }
             }
         }
         stage('Deliver') {
